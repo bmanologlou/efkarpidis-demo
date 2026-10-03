@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,12 +43,10 @@ a{color:inherit;text-decoration:none}
 .gallery-dots{display:flex;justify-content:center;gap:7px;margin-top:12px}
 .gallery-dot{width:8px;height:8px;border-radius:50%;border:1px solid rgba(19,35,30,.36);background:transparent;padding:0}
 .gallery-dot.active{background:var(--green);border-color:var(--green)}
-
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
 .reveal.visible{opacity:1;transform:none}
 .reveal-delay-1{transition-delay:.08s}
 .reveal-delay-2{transition-delay:.16s}
-.reveal-delay-3{transition-delay:.24s}
 .hero .kicker,.hero h1,.hero p,.hero .price{opacity:0;transform:translateY(14px);animation:heroIn .65s forwards}
 .hero h1{animation-delay:.08s}.hero p{animation-delay:.16s}.hero .price{animation-delay:.24s}
 @keyframes heroIn{to{opacity:1;transform:none}}
@@ -112,59 +110,59 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
 <div class="wrap">
   <div class="masthead">
     <div class="brand">efkarpidis tours</div>
-    <a class="back" href="/" aria-label="Back to Curated Escapes">Back</a>
+    <a class="back" href="/" aria-label="Επιστροφή στα Curated Escapes">Back</a>
   </div>
 
   <section class="hero">
     <div class="kicker">Worth the detour · Portugal</div>
     <h1>Lisbon</h1>
-    <p>Layers of light, colour and character.</p>
-    <div class="price"><small>from</small><strong>€429</strong></div>
+    <p>Φως, χρώμα και χαρακτήρας σε κάθε γωνιά.</p>
+    <div class="price"><small>από</small><strong>€429</strong></div>
   </section>
 
   <section class="section reveal">
-    <div class="eyebrow">At a glance</div>
-    <h2>A city best discovered slowly.</h2>
-    <p class="intro">A curated city escape through Lisbon’s neighbourhoods, viewpoints and everyday rhythm — from tiled façades and old trams to Atlantic light and long evenings by the river.</p>
+    <div class="eyebrow">Με μια ματιά</div>
+    <h2>Μια πόλη που αξίζει να ανακαλύψεις χωρίς βιασύνη.</h2>
+    <p class="intro">Μια επιλεγμένη απόδραση μέσα από τις γειτονιές, τα σημεία θέας και τον καθημερινό ρυθμό της Λισαβόνας, από τις χαρακτηριστικές προσόψεις και τα παλιά τραμ μέχρι το φως του Ατλαντικού και τις βραδιές δίπλα στο ποτάμι.</p>
     <div class="atglance">
-      <div class="fact"><small>Duration</small><strong>4 days / 3 nights</strong></div>
-      <div class="fact"><small>Next departure</small><strong>18 Oct 2026</strong></div>
-      <div class="fact"><small>Travel style</small><strong>City discovery</strong></div>
-      <div class="fact"><small>Availability</small><strong>Limited places</strong></div>
+      <div class="fact"><small>Διάρκεια</small><strong>4 ημέρες / 3 νύχτες</strong></div>
+      <div class="fact"><small>Επόμενη αναχώρηση</small><strong>18 Οκτ 2026</strong></div>
+      <div class="fact"><small>Τύπος ταξιδιού</small><strong>City discovery</strong></div>
+      <div class="fact"><small>Διαθεσιμότητα</small><strong>Περιορισμένες θέσεις</strong></div>
     </div>
   </section>
 
   <section class="gallery reveal reveal-delay-1">
     <div class="gallery-head">
       <div>
-        <div class="eyebrow">A glimpse of Lisbon</div>
-        <h2>See a little more.</h2>
+        <div class="eyebrow">Μια ματιά στη Λισαβόνα</div>
+        <h2>Δες λίγο περισσότερα.</h2>
       </div>
       <div class="gallery-counter" id="galleryCounter">1 / 3</div>
     </div>
     <div class="gallery-frame" id="galleryFrame">
       <div class="gallery-track" id="galleryTrack">
         <div class="gallery-slide three clone" aria-hidden="true">
-          <div class="gallery-caption"><strong>Miradouros</strong><span>A different view of the city</span></div>
+          <div class="gallery-caption"><strong>Miradouros</strong><span>Μια διαφορετική θέα της πόλης</span></div>
         </div>
         <div class="gallery-slide one">
-          <div class="gallery-caption"><strong>Alfama</strong><span>Tiles, rooftops and narrow streets</span></div>
+          <div class="gallery-caption"><strong>Alfama</strong><span>Πλακάκια, στέγες και στενά δρομάκια</span></div>
         </div>
         <div class="gallery-slide two">
-          <div class="gallery-caption"><strong>Belém</strong><span>River light and landmark architecture</span></div>
+          <div class="gallery-caption"><strong>Belém</strong><span>Φως, ποτάμι και εμβληματική αρχιτεκτονική</span></div>
         </div>
         <div class="gallery-slide three">
-          <div class="gallery-caption"><strong>Miradouros</strong><span>A different view of the city</span></div>
+          <div class="gallery-caption"><strong>Miradouros</strong><span>Μια διαφορετική θέα της πόλης</span></div>
         </div>
         <div class="gallery-slide one clone" aria-hidden="true">
-          <div class="gallery-caption"><strong>Alfama</strong><span>Tiles, rooftops and narrow streets</span></div>
+          <div class="gallery-caption"><strong>Alfama</strong><span>Πλακάκια, στέγες και στενά δρομάκια</span></div>
         </div>
       </div>
     </div>
     <div class="gallery-dots">
-      <button class="gallery-dot active" data-gallery="0" aria-label="Gallery image 1"></button>
-      <button class="gallery-dot" data-gallery="1" aria-label="Gallery image 2"></button>
-      <button class="gallery-dot" data-gallery="2" aria-label="Gallery image 3"></button>
+      <button class="gallery-dot active" data-gallery="0" aria-label="Εικόνα 1"></button>
+      <button class="gallery-dot" data-gallery="1" aria-label="Εικόνα 2"></button>
+      <button class="gallery-dot" data-gallery="2" aria-label="Εικόνα 3"></button>
     </div>
   </section>
 
@@ -172,31 +170,31 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
     <div class="eyebrow">What you'll discover</div>
     <h2>Lisbon, beyond the obvious.</h2>
     <div class="editorial-list">
-      <div class="item"><b>Alfama & Mouraria</b><span>Old neighbourhoods, local streets and the city’s layered everyday character.</span></div>
-      <div class="item"><b>Belém</b><span>Architecture, riverfront walks and one of Lisbon’s most recognisable districts.</span></div>
-      <div class="item"><b>Miradouros</b><span>Selected viewpoints that reveal a different perspective on the city.</span></div>
-      <div class="item"><b>Time to wander</b><span>Space in the programme to discover Lisbon at your own pace.</span></div>
+      <div class="item"><b>Alfama & Mouraria</b><span>Παλιές γειτονιές, τοπικοί δρόμοι και ο αυθεντικός καθημερινός χαρακτήρας της πόλης.</span></div>
+      <div class="item"><b>Belém</b><span>Αρχιτεκτονική, βόλτες δίπλα στο ποτάμι και μία από τις πιο αναγνωρίσιμες περιοχές της Λισαβόνας.</span></div>
+      <div class="item"><b>Miradouros</b><span>Επιλεγμένα σημεία θέας που αποκαλύπτουν μια διαφορετική οπτική της πόλης.</span></div>
+      <div class="item"><b>Χρόνος για εξερεύνηση</b><span>Ελεύθερος χρόνος μέσα στο πρόγραμμα για να ανακαλύψεις τη Λισαβόνα με τον δικό σου ρυθμό.</span></div>
     </div>
   </section>
 
   <section class="curious-point reveal">
     <div class="eyebrow">Curious Point</div>
-    <h2>Look down. Lisbon tells stories under your feet.</h2>
-    <p>The city’s distinctive black-and-white calçada pavements turn everyday streets and squares into graphic patterns — a small detail that becomes part of the Lisbon experience.</p>
+    <h2>Κοίτα χαμηλά. Η Λισαβόνα αφηγείται ιστορίες κάτω από τα πόδια σου.</h2>
+    <p>Τα χαρακτηριστικά ασπρόμαυρα calçada μετατρέπουν δρόμους και πλατείες σε γραφικά μοτίβα, μια μικρή λεπτομέρεια που γίνεται μέρος της εμπειρίας της πόλης.</p>
   </section>
 
   <section class="section reveal">
-    <div class="eyebrow">Trip details</div>
-    <h2>Included in the journey</h2>
-    <p class="intro">Return travel, 3 nights accommodation, selected guided experiences, local transfers and Efkarpidis Tours coordination.</p>
+    <div class="eyebrow">Λεπτομέρειες ταξιδιού</div>
+    <h2>Τι περιλαμβάνεται</h2>
+    <p class="intro">Μεταφορά με επιστροφή, 3 διανυκτερεύσεις, επιλεγμένες οργανωμένες εμπειρίες, τοπικές μετακινήσεις και συντονισμός από το Efkarpidis Tours.</p>
   </section>
 
   <section class="travel-pass reveal">
     <div class="travel-pass-inner">
       <div>
         <div class="eyebrow">Travel Pass</div>
-        <h2>Keep this journey with you.</h2>
-        <p>Save this trip, useful details and future updates in one place. One tap, everything together.</p>
+        <h2>Κράτησε αυτό το ταξίδι μαζί σου.</h2>
+        <p>Αποθήκευσε το ταξίδι, χρήσιμες πληροφορίες και μελλοντικές ενημερώσεις σε ένα σημείο.</p>
         <button class="pass-btn" id="passBtn">Add to Travel Pass</button>
       </div>
       <div class="pass-card-wrap" aria-hidden="true">
@@ -216,15 +214,15 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
   <section class="brand-moment reveal">
     <div class="eyebrow">Forever Curious</div>
     <h2>Seek Wonder.</h2>
-    <p>Every journey hides something new to discover.</p>
+    <p>Κάθε ταξίδι κρύβει κάτι νέο να ανακαλύψεις.</p>
   </section>
 
   <section class="handoff reveal">
     <div class="handoff-box">
-      <div class="eyebrow">Looking for more?</div>
-      <h3>Explore all destinations.</h3>
-      <p>Continue on the Efkarpidis Tours website to discover more departures and travel experiences.</p>
-      <a class="btn" href="https://www.efkarpidistours.gr/" target="_blank" rel="noopener">Explore destinations</a>
+      <div class="eyebrow">Περισσότερες επιλογές</div>
+      <h3>Ανακάλυψε όλους τους προορισμούς.</h3>
+      <p>Συνέχισε στο site του Efkarpidis Tours για περισσότερες αναχωρήσεις και ταξιδιωτικές εμπειρίες.</p>
+      <a class="btn" href="https://www.efkarpidistours.gr/" target="_blank" rel="noopener">Δες όλους τους προορισμούς</a>
     </div>
   </section>
 
@@ -234,7 +232,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
   </footer>
 </div>
 
-<div class="toast" id="toast">Lisbon added to your Travel Pass · Demo</div>
+<div class="toast" id="toast">Το Lisbon προστέθηκε στο Travel Pass · Demo</div>
 <script>
 const track=document.getElementById('galleryTrack');
 const frame=document.getElementById('galleryFrame');
@@ -244,7 +242,6 @@ const totalGallery=galleryDots.length;
 let logicalGallery=0;
 let physicalGallery=1;
 let galleryAnimating=false;
-
 function updateGalleryMeta(){
   galleryDots.forEach((d,j)=>d.classList.toggle('active',logicalGallery===j));
   counter.textContent=(logicalGallery+1)+' / '+totalGallery;
@@ -276,7 +273,6 @@ function goToGallery(index){
 }
 setGalleryPosition(false);
 updateGalleryMeta();
-
 track.addEventListener('transitionend',()=>{
   if(physicalGallery===0){
     physicalGallery=totalGallery;
@@ -287,23 +283,19 @@ track.addEventListener('transitionend',()=>{
   }
   galleryAnimating=false;
 });
-
 galleryDots.forEach((dot,i)=>dot.addEventListener('click',()=>goToGallery(i)));
-
 let touchStartX=0;
 frame.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
 frame.addEventListener('touchend',e=>{
   const dx=e.changedTouches[0].screenX-touchStartX;
   if(Math.abs(dx)>35) moveGallery(dx<0?1:-1);
 },{passive:true});
-
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
   });
 },{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
 const btn=document.getElementById('passBtn');
 const toast=document.getElementById('toast');
 btn.addEventListener('click',()=>{
