@@ -66,6 +66,18 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:56px;line-height:.92;le
 .site-box h3{font-size:28px;letter-spacing:-.03em;margin:8px 0 8px}
 .site-box p{margin:0 0 16px;line-height:1.5;color:#4e5a54}
 footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color:#6e7772;display:flex;justify-content:space-between;gap:12px}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.reveal-delay-3{transition-delay:.24s}
+.hero .kicker,.hero h1,.hero p,.hero .hero-note{opacity:0;transform:translateY(14px);animation:heroIn .65s forwards}
+.hero h1{animation-delay:.08s}.hero p{animation-delay:.16s}.hero .hero-note{animation-delay:.24s}
+.card{transition:transform .25s ease,box-shadow .25s ease}
+.card:active{transform:scale(.99)}
+@keyframes heroIn{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}.reveal,.hero .kicker,.hero h1,.hero p,.hero .hero-note{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}}
 @media(max-width:560px){h1{font-size:49px}.grid{grid-template-columns:1fr}.visual{aspect-ratio:16/10}}
 </style>
 </head>
@@ -83,14 +95,14 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
     <div class="hero-note">A digital travel edit by Efkarpidis Tours</div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="section-head">
       <h2>Choose your next elsewhere.</h2>
       <span>Tap to explore</span>
     </div>
 
     <div class="grid">
-      <article class="card">
+      <article class="card reveal">
         <div class="visual meteora"><span class="tag">Nature + Culture</span></div>
         <div class="card-body">
           <h3 class="city">Meteora</h3>
@@ -100,7 +112,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal reveal-delay-1">
         <div class="visual riotinto"><span class="tag">Unexpected Landscapes</span></div>
         <div class="card-body">
           <h3 class="city">Rio Tinto</h3>
@@ -110,7 +122,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal reveal-delay-2">
         <div class="visual abisko"><span class="tag">Arctic Wonder</span></div>
         <div class="card-body">
           <h3 class="city">Abisko</h3>
@@ -120,7 +132,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
         </div>
       </article>
 
-      <article class="card">
+      <article class="card reveal reveal-delay-3">
         <a href="lisbon.html" aria-label="Open Lisbon journey">
           <div class="visual lisbon"><span class="tag">City Discovery</span></div>
           <div class="card-body">
@@ -134,13 +146,13 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
     </div>
   </section>
 
-  <section class="brand-moment">
+  <section class="brand-moment reveal">
     <div class="eyebrow">Forever Curious</div>
     <h3>Seek Wonder.</h3>
     <p>Every journey hides something new to discover.</p>
   </section>
 
-  <section class="site-handoff">
+  <section class="site-handoff reveal">
     <div class="site-box">
       <div class="eyebrow">Looking for more?</div>
       <h3>Explore all destinations.</h3>
@@ -154,5 +166,16 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
     <span>Discover more than the destination.</span>
   </footer>
 </div>
+<script>
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 </body>
 </html>
