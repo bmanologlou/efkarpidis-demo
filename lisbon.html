@@ -144,6 +144,9 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
     </div>
     <div class="gallery-frame" id="galleryFrame">
       <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide three clone" aria-hidden="true">
+          <div class="gallery-caption"><strong>Miradouros</strong><span>A different view of the city</span></div>
+        </div>
         <div class="gallery-slide one">
           <div class="gallery-caption"><strong>Alfama</strong><span>Tiles, rooftops and narrow streets</span></div>
         </div>
@@ -152,6 +155,9 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
         </div>
         <div class="gallery-slide three">
           <div class="gallery-caption"><strong>Miradouros</strong><span>A different view of the city</span></div>
+        </div>
+        <div class="gallery-slide one clone" aria-hidden="true">
+          <div class="gallery-caption"><strong>Alfama</strong><span>Tiles, rooftops and narrow streets</span></div>
         </div>
       </div>
     </div>
@@ -234,19 +240,61 @@ const track=document.getElementById('galleryTrack');
 const frame=document.getElementById('galleryFrame');
 const galleryDots=[...document.querySelectorAll('.gallery-dot')];
 const counter=document.getElementById('galleryCounter');
-let currentGallery=0;
-function showGallery(i){
-  currentGallery=(i+galleryDots.length)%galleryDots.length;
-  track.style.transform='translateX(-'+(currentGallery*100)+'%)';
-  galleryDots.forEach((d,j)=>d.classList.toggle('active',currentGallery===j));
-  counter.textContent=(currentGallery+1)+' / '+galleryDots.length;
+const totalGallery=galleryDots.length;
+let logicalGallery=0;
+let physicalGallery=1;
+let galleryAnimating=false;
+
+function updateGalleryMeta(){
+  galleryDots.forEach((d,j)=>d.classList.toggle('active',logicalGallery===j));
+  counter.textContent=(logicalGallery+1)+' / '+totalGallery;
 }
-galleryDots.forEach((dot,i)=>dot.addEventListener('click',()=>showGallery(i)));
+function setGalleryPosition(withAnimation=true){
+  track.style.transition=withAnimation?'transform .45s cubic-bezier(.22,.61,.36,1)':'none';
+  track.style.transform='translateX(-'+(physicalGallery*100)+'%)';
+}
+function moveGallery(direction){
+  if(galleryAnimating) return;
+  galleryAnimating=true;
+  physicalGallery+=direction;
+  logicalGallery=(logicalGallery+direction+totalGallery)%totalGallery;
+  updateGalleryMeta();
+  setGalleryPosition(true);
+}
+function goToGallery(index){
+  if(galleryAnimating || index===logicalGallery) return;
+  const diff=index-logicalGallery;
+  if(Math.abs(diff)===1){
+    moveGallery(diff);
+  }else{
+    logicalGallery=index;
+    physicalGallery=index+1;
+    updateGalleryMeta();
+    setGalleryPosition(true);
+    galleryAnimating=true;
+  }
+}
+setGalleryPosition(false);
+updateGalleryMeta();
+
+track.addEventListener('transitionend',()=>{
+  if(physicalGallery===0){
+    physicalGallery=totalGallery;
+    setGalleryPosition(false);
+  }else if(physicalGallery===totalGallery+1){
+    physicalGallery=1;
+    setGalleryPosition(false);
+  }
+  galleryAnimating=false;
+});
+
+galleryDots.forEach((dot,i)=>dot.addEventListener('click',()=>goToGallery(i)));
+
 let touchStartX=0;
 frame.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
 frame.addEventListener('touchend',e=>{
   const dx=e.changedTouches[0].screenX-touchStartX;
-  if(Math.abs(dx)>35) showGallery(currentGallery+(dx<0?1:-1));
+  if(Math.abs(dx)>35) moveGallery(dx<0?1:-1);
 },{passive:true});
 
 const observer=new IntersectionObserver(entries=>{
