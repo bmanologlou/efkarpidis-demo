@@ -20,10 +20,9 @@
 body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream)}
-.masthead{padding:18px 20px;display:grid;grid-template-columns:40px 1fr 40px;align-items:center}
-.back{width:34px;height:34px;border-radius:50%;border:1px solid rgba(5,81,60,.18);display:grid;place-items:center;color:var(--green);font-size:18px;font-weight:700}
-.brand{font-weight:800;letter-spacing:-.02em;text-align:center}
-.mast-spacer{width:34px;height:34px}
+.masthead{padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.back{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:800}
+.brand{font-weight:800;letter-spacing:-.02em}
 .hero{margin:0 16px;border-radius:0 0 30px 30px;min-height:365px;color:#fff;position:relative;overflow:hidden}
 .hero-slider{position:absolute;inset:0;z-index:0}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
@@ -33,10 +32,10 @@ a{color:inherit;text-decoration:none}
 .hero-slide.three{background:linear-gradient(145deg,#cfd8ef,#6174a8 55%,#2b355b)}
 .hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.34))}
 .hero-content{position:relative;z-index:2;min-height:365px;padding:42px 20px 28px;display:flex;flex-direction:column;justify-content:flex-end}
-.hero-dots{display:flex;gap:7px;margin-top:18px}
-.hero-dot{width:8px;height:8px;border-radius:50%;border:1px solid rgba(255,255,255,.75);background:transparent;padding:0}
+.hero-dots{display:flex;gap:7px;margin-top:18px;position:relative;z-index:3}
+.hero-dot{width:9px;height:9px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:transparent;padding:0;cursor:pointer}
 .hero-dot.active{background:#fff}
-.hero>*{position:relative;z-index:2}
+.hero-content{position:relative;z-index:2}
 .kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
 h1{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:.92;letter-spacing:-.055em;margin:10px 0 8px}
 .hero p{font-size:18px;line-height:1.45;margin:0 0 18px;max-width:520px}
@@ -95,9 +94,8 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
 <body>
 <div class="wrap">
   <div class="masthead">
-    <a class="back" href="/" aria-label="Back to Curated Escapes">←</a>
     <div class="brand">efkarpidis tours</div>
-    <div class="mast-spacer" aria-hidden="true"></div>
+    <a class="back" href="/" aria-label="Back to Curated Escapes">Back</a>
   </div>
 
   <section class="hero">
@@ -201,10 +199,22 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
 <script>
 const slides=[...document.querySelectorAll('.hero-slide')];
 const dots=[...document.querySelectorAll('.hero-dot')];
-dots.forEach((dot,i)=>dot.addEventListener('click',()=>{
-  slides.forEach((slide,j)=>slide.classList.toggle('active',i===j));
-  dots.forEach((d,j)=>d.classList.toggle('active',i===j));
-}));
+let currentSlide=0;
+function showSlide(i){
+  currentSlide=(i+slides.length)%slides.length;
+  slides.forEach((slide,j)=>slide.classList.toggle('active',currentSlide===j));
+  dots.forEach((d,j)=>d.classList.toggle('active',currentSlide===j));
+}
+dots.forEach((dot,i)=>dot.addEventListener('click',()=>showSlide(i)));
+
+const hero=document.querySelector('.hero');
+let touchStartX=0;
+hero.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+hero.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(dx)>35) showSlide(currentSlide+(dx<0?1:-1));
+},{passive:true});
+
 const btn=document.getElementById('passBtn');
 const toast=document.getElementById('toast');
 btn.addEventListener('click',()=>{
