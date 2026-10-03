@@ -43,7 +43,7 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:56px;line-height:.92;le
 .visual{aspect-ratio:4/3;padding:14px;display:flex;align-items:flex-start;justify-content:space-between;position:relative;overflow:hidden}
 .visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),transparent 45%,rgba(0,0,0,.22))}
 .tag{position:relative;z-index:2;font-size:9px;text-transform:uppercase;letter-spacing:.11em;background:rgba(242,239,232,.92);padding:7px 9px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}
-.price-chip{position:relative;z-index:2;background:rgba(19,35,30,.82);color:#fff;border-radius:999px;padding:8px 10px;font-size:11px;font-weight:800;backdrop-filter:blur(8px)}
+.price-chip{display:none}
 .meteora{background:linear-gradient(145deg,var(--sky),#6e8f79 52%,#2c4437)}
 .riotinto{background:linear-gradient(145deg,#4A2507,#b84b24 58%,#f0a167)}
 .abisko{background:linear-gradient(145deg,#091c2a,#1D749E 48%,#05513C)}
@@ -54,7 +54,9 @@ h1{font-family:Georgia,"Times New Roman",serif;font-size:56px;line-height:.92;le
 .place{font-size:11px;color:#7a847f;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
 .line{font-size:14px;line-height:1.48;min-height:42px;margin:0 0 16px;color:#34423b}
 .bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px;border-top:1px solid rgba(19,35,30,.08)}
-.card-index{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8a938e;font-weight:800}
+.card-price{display:flex;align-items:baseline;gap:5px;color:var(--ink)}
+.card-price small{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#87918b}
+.card-price strong{font-size:20px;letter-spacing:-.035em}
 .card-link{display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;background:var(--green);text-transform:uppercase;letter-spacing:.08em;border-radius:999px;padding:9px 12px;min-width:92px;transition:transform .2s ease,background .2s ease}
 .card:active .card-link{transform:scale(.97)}
 .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;border-radius:999px;padding:10px 13px;font-size:11px;font-weight:800}
@@ -120,7 +122,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
           </div>
           <p class="line">Where earth meets the sky.</p>
           <div class="bottom">
-            <span class="card-index">01</span>
+            <span class="card-price"><small>from</small><strong>€89</strong></span>
             <span class="card-link">Coming soon</span>
           </div>
         </div>
@@ -140,7 +142,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
           </div>
           <p class="line">Colours from another planet.</p>
           <div class="bottom">
-            <span class="card-index">02</span>
+            <span class="card-price"><small>from</small><strong>€549</strong></span>
             <span class="card-link">Coming soon</span>
           </div>
         </div>
@@ -160,7 +162,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
           </div>
           <p class="line">Under a sky that never stays the same.</p>
           <div class="bottom">
-            <span class="card-index">03</span>
+            <span class="card-price"><small>from</small><strong>€895</strong></span>
             <span class="card-link">Coming soon</span>
           </div>
         </div>
@@ -180,7 +182,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
           </div>
           <p class="line">Layers of light, colour and character.</p>
           <div class="bottom">
-            <span class="card-index">04</span>
+            <span class="card-price"><small>from</small><strong>€429</strong></span>
             <span class="card-link">Explore</span>
           </div>
         </div>
