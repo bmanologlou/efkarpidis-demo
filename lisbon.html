@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lisbon — Curated Escapes</title>
+<meta name="theme-color" content="#F98050">
+<style>
+:root{
+  --green:#05513C;
+  --green-soft:#ACCA5B;
+  --brown:#4A2507;
+  --coral:#F98050;
+  --pink:#F7C6D9;
+  --yellow:#F8C950;
+  --cream:#F2EFE8;
+  --ink:#13231E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(242,239,232,.95);position:sticky;top:0;backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid rgba(19,35,30,.08)}
+.back{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--green)}
+.brand{font-weight:800;letter-spacing:-.02em}
+.hero{padding:60px 20px 30px;background:linear-gradient(145deg,var(--yellow),var(--coral) 58%,#b7583b);min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;color:var(--brown)}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:.92;letter-spacing:-.055em;margin:10px 0 8px}
+.hero p{font-size:18px;line-height:1.45;margin:0 0 18px;max-width:520px}
+.price{display:inline-flex;align-items:baseline;gap:8px;background:rgba(242,239,232,.85);padding:10px 14px;border-radius:999px;width:max-content}
+.price small{font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.price strong{font-size:24px}
+
+.section{padding:26px 20px}
+.section h2{font-size:20px;margin:0 0 14px}
+.intro{font-size:16px;line-height:1.6;margin:0;color:#34433d}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.fact{background:#fff;border:1px solid rgba(19,35,30,.07);border-radius:20px;padding:16px}
+.fact small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#78827d;margin-bottom:6px}
+.fact strong{font-size:16px}
+
+.highlights{display:grid;gap:10px}
+.highlight{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:14px 16px;border:1px solid rgba(19,35,30,.06)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--coral);margin-top:5px;flex:0 0 auto}
+.highlight b{display:block;margin-bottom:3px}
+.highlight span{font-size:13px;color:#5c6963;line-height:1.4}
+
+.includes{background:var(--green);color:#fff;margin:8px 20px 0;border-radius:26px;padding:22px}
+.includes h2{margin:0 0 12px;font-size:20px}
+.includes ul{margin:0;padding-left:18px;line-height:1.7;color:rgba(255,255,255,.88)}
+
+.cta{padding:28px 20px 40px}
+.cta-box{background:var(--pink);border-radius:26px;padding:22px}
+.cta-box h3{font-size:24px;margin:0 0 8px}
+.cta-box p{margin:0 0 16px;line-height:1.45}
+.btn{display:inline-flex;background:var(--green);color:#fff;border-radius:999px;padding:13px 18px;font-size:12px;font-weight:800}
+
+footer{padding:18px 20px 28px;font-size:11px;color:#6d7671;border-top:1px solid rgba(19,35,30,.08)}
+@media(max-width:560px){h1{font-size:54px}.facts{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" href="/">← Curated Escapes</a>
+    <div class="brand">efkarpidis tours</div>
+  </div>
+
+  <section class="hero">
+    <div class="kicker">City Discovery · Portugal</div>
+    <h1>Lisbon</h1>
+    <p>Layers of light, colour and character.</p>
+    <div class="price"><small>from</small><strong>€429</strong></div>
+  </section>
+
+  <section class="section">
+    <h2>Trip overview</h2>
+    <p class="intro">A city escape shaped around Lisbon’s neighbourhoods, viewpoints and everyday rhythm — from tiled façades and old trams to Atlantic light and long evenings by the river.</p>
+    <div class="facts">
+      <div class="fact"><small>Duration</small><strong>4 days / 3 nights</strong></div>
+      <div class="fact"><small>Next departure</small><strong>18 Oct 2026</strong></div>
+      <div class="fact"><small>Travel style</small><strong>City discovery</strong></div>
+      <div class="fact"><small>Availability</small><strong>Limited places</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Highlights</h2>
+    <div class="highlights">
+      <div class="highlight"><span class="dot"></span><div><b>Alfama & Mouraria</b><span>Walk through Lisbon’s oldest neighbourhoods and hidden corners.</span></div></div>
+      <div class="highlight"><span class="dot"></span><div><b>Belém</b><span>Architecture, riverfront walks and one of the city’s most iconic districts.</span></div></div>
+      <div class="highlight"><span class="dot"></span><div><b>Miradouros</b><span>Selected viewpoints for a different perspective on the city.</span></div></div>
+      <div class="highlight"><span class="dot"></span><div><b>Free time to explore</b><span>Space in the itinerary to discover Lisbon at your own pace.</span></div></div>
+    </div>
+  </section>
+
+  <section class="includes">
+    <h2>What’s included</h2>
+    <ul>
+      <li>Return travel</li>
+      <li>3 nights accommodation</li>
+      <li>Selected guided experiences</li>
+      <li>Local transfers</li>
+      <li>Efkarpidis Tours coordination</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <div class="cta-box">
+      <h3>Interested in Lisbon?</h3>
+      <p>Check the next available departure or ask us for more details about this curated escape.</p>
+      <a class="btn" href="mailto:info@efkarpidistours.gr">Ask about this journey</a>
+    </div>
+  </section>
+
+  <footer>Curated Escapes · Demo experience</footer>
+</div>
+</body>
+</html>
