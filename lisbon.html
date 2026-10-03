@@ -19,64 +19,74 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:760px;margin:0 auto;min-height:100vh}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(242,239,232,.95);position:sticky;top:0;backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid rgba(19,35,30,.08)}
-.back{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--green)}
+.wrap{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream)}
+.masthead{padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.back{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:800}
 .brand{font-weight:800;letter-spacing:-.02em}
-.hero{padding:60px 20px 30px;background:linear-gradient(145deg,var(--yellow),var(--coral) 58%,#b7583b);min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;color:var(--brown)}
-.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+.hero{margin:0 16px;border-radius:0 0 30px 30px;min-height:365px;padding:42px 20px 28px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,var(--yellow),var(--coral) 58%,#b7583b);color:var(--brown);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-64px;top:-54px;width:200px;height:200px;border:1px solid rgba(74,37,7,.22);border-radius:50%}
+.hero>*{position:relative;z-index:2}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
 h1{font-family:Georgia,"Times New Roman",serif;font-size:62px;line-height:.92;letter-spacing:-.055em;margin:10px 0 8px}
 .hero p{font-size:18px;line-height:1.45;margin:0 0 18px;max-width:520px}
-.price{display:inline-flex;align-items:baseline;gap:8px;background:rgba(242,239,232,.85);padding:10px 14px;border-radius:999px;width:max-content}
+.price{display:inline-flex;align-items:baseline;gap:8px;background:rgba(242,239,232,.86);padding:10px 14px;border-radius:999px;width:max-content}
 .price small{font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 .price strong{font-size:24px}
-
-.section{padding:26px 20px}
-.section h2{font-size:20px;margin:0 0 14px}
-.intro{font-size:16px;line-height:1.6;margin:0;color:#34433d}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.fact{background:#fff;border:1px solid rgba(19,35,30,.07);border-radius:20px;padding:16px}
-.fact small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#78827d;margin-bottom:6px}
+.section{padding:30px 20px 6px}
+.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#758079;font-weight:800}
+.section h2{font-size:27px;letter-spacing:-.03em;margin:7px 0 12px}
+.intro{font-size:16px;line-height:1.62;margin:0;color:#39463f}
+.atglance{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.fact{border-top:1px solid rgba(19,35,30,.16);padding-top:12px}
+.fact small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7a837e;margin-bottom:5px}
 .fact strong{font-size:16px}
-
-.highlights{display:grid;gap:10px}
-.highlight{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:14px 16px;border:1px solid rgba(19,35,30,.06)}
-.dot{width:10px;height:10px;border-radius:50%;background:var(--coral);margin-top:5px;flex:0 0 auto}
-.highlight b{display:block;margin-bottom:3px}
-.highlight span{font-size:13px;color:#5c6963;line-height:1.4}
-
-.includes{background:var(--green);color:#fff;margin:8px 20px 0;border-radius:26px;padding:22px}
-.includes h2{margin:0 0 12px;font-size:20px}
-.includes ul{margin:0;padding-left:18px;line-height:1.7;color:rgba(255,255,255,.88)}
-
-.cta{padding:28px 20px 40px}
-.cta-box{background:var(--pink);border-radius:26px;padding:22px}
-.cta-box h3{font-size:24px;margin:0 0 8px}
-.cta-box p{margin:0 0 16px;line-height:1.45}
-.btn{display:inline-flex;background:var(--green);color:#fff;border-radius:999px;padding:13px 18px;font-size:12px;font-weight:800}
-
-footer{padding:18px 20px 28px;font-size:11px;color:#6d7671;border-top:1px solid rgba(19,35,30,.08)}
-@media(max-width:560px){h1{font-size:54px}.facts{grid-template-columns:1fr 1fr}}
+.editorial{margin:30px 20px 0;background:#fff;border-radius:28px;padding:22px;border:1px solid rgba(19,35,30,.06)}
+.editorial h2{font-size:25px;margin:6px 0 14px}
+.editorial-list{display:grid;gap:14px}
+.item{padding-bottom:14px;border-bottom:1px solid rgba(19,35,30,.08)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.item b{display:block;margin-bottom:4px}
+.item span{font-size:14px;line-height:1.45;color:#5b6660}
+.travel-pass{margin:30px 20px 0;background:var(--green);color:#fff;border-radius:28px;padding:22px;position:relative;overflow:hidden}
+.travel-pass:after{content:"NFC";position:absolute;right:18px;top:16px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 9px;font-size:10px;letter-spacing:.12em}
+.travel-pass .eyebrow{color:var(--yellow)}
+.travel-pass h2{font-size:27px;letter-spacing:-.03em;margin:7px 0 8px}
+.travel-pass p{margin:0 0 16px;line-height:1.5;color:rgba(255,255,255,.84);max-width:500px}
+.pass-btn{display:inline-flex;background:#fff;color:var(--green);padding:11px 14px;border-radius:999px;font-size:11px;font-weight:800;border:0;cursor:pointer}
+.brand-moment{margin:30px 20px 0;border-radius:28px;background:var(--brown);color:#fff;padding:24px}
+.brand-moment .eyebrow{color:var(--yellow)}
+.brand-moment h2{font-family:Georgia,serif;font-size:34px;line-height:1;margin:8px 0 10px}
+.brand-moment p{margin:0;color:rgba(255,255,255,.82);line-height:1.5}
+.handoff{padding:30px 20px 42px}
+.handoff-box{border-top:1px solid rgba(19,35,30,.13);padding-top:24px}
+.handoff h3{font-size:27px;letter-spacing:-.03em;margin:8px 0}
+.handoff p{margin:0 0 16px;line-height:1.5;color:#4f5a54}
+.btn{display:inline-flex;background:var(--green);color:#fff;padding:12px 16px;border-radius:999px;font-size:11px;font-weight:800}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 15px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color:#6d7671;display:flex;justify-content:space-between;gap:12px}
+@media(max-width:560px){h1{font-size:54px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar">
+  <div class="masthead">
     <a class="back" href="/">← Curated Escapes</a>
     <div class="brand">efkarpidis tours</div>
   </div>
 
   <section class="hero">
-    <div class="kicker">City Discovery · Portugal</div>
+    <div class="kicker">Worth the detour · Portugal</div>
     <h1>Lisbon</h1>
     <p>Layers of light, colour and character.</p>
     <div class="price"><small>from</small><strong>€429</strong></div>
   </section>
 
   <section class="section">
-    <h2>Trip overview</h2>
-    <p class="intro">A city escape shaped around Lisbon’s neighbourhoods, viewpoints and everyday rhythm — from tiled façades and old trams to Atlantic light and long evenings by the river.</p>
-    <div class="facts">
+    <div class="eyebrow">At a glance</div>
+    <h2>A city best discovered slowly.</h2>
+    <p class="intro">A curated city escape through Lisbon’s neighbourhoods, viewpoints and everyday rhythm — from tiled façades and old trams to Atlantic light and long evenings by the river.</p>
+    <div class="atglance">
       <div class="fact"><small>Duration</small><strong>4 days / 3 nights</strong></div>
       <div class="fact"><small>Next departure</small><strong>18 Oct 2026</strong></div>
       <div class="fact"><small>Travel style</small><strong>City discovery</strong></div>
@@ -84,36 +94,60 @@ footer{padding:18px 20px 28px;font-size:11px;color:#6d7671;border-top:1px solid 
     </div>
   </section>
 
+  <section class="editorial">
+    <div class="eyebrow">What you'll discover</div>
+    <h2>Lisbon, beyond the obvious.</h2>
+    <div class="editorial-list">
+      <div class="item"><b>Alfama & Mouraria</b><span>Old neighbourhoods, local streets and the city’s layered everyday character.</span></div>
+      <div class="item"><b>Belém</b><span>Architecture, riverfront walks and one of Lisbon’s most recognisable districts.</span></div>
+      <div class="item"><b>Miradouros</b><span>Selected viewpoints that reveal a different perspective on the city.</span></div>
+      <div class="item"><b>Time to wander</b><span>Space in the programme to discover Lisbon at your own pace.</span></div>
+    </div>
+  </section>
+
   <section class="section">
-    <h2>Highlights</h2>
-    <div class="highlights">
-      <div class="highlight"><span class="dot"></span><div><b>Alfama & Mouraria</b><span>Walk through Lisbon’s oldest neighbourhoods and hidden corners.</span></div></div>
-      <div class="highlight"><span class="dot"></span><div><b>Belém</b><span>Architecture, riverfront walks and one of the city’s most iconic districts.</span></div></div>
-      <div class="highlight"><span class="dot"></span><div><b>Miradouros</b><span>Selected viewpoints for a different perspective on the city.</span></div></div>
-      <div class="highlight"><span class="dot"></span><div><b>Free time to explore</b><span>Space in the itinerary to discover Lisbon at your own pace.</span></div></div>
+    <div class="eyebrow">Trip details</div>
+    <h2>Included in the journey</h2>
+    <p class="intro">Return travel, 3 nights accommodation, selected guided experiences, local transfers and Efkarpidis Tours coordination.</p>
+  </section>
+
+  <section class="travel-pass">
+    <div class="eyebrow">Travel Pass</div>
+    <h2>Keep this journey with you.</h2>
+    <p>Save the trip, useful details and future updates in one place. One tap, everything together.</p>
+    <button class="pass-btn" id="passBtn">Add to Travel Pass</button>
+  </section>
+
+  <section class="brand-moment">
+    <div class="eyebrow">Forever Curious</div>
+    <h2>Seek Wonder.</h2>
+    <p>Every journey hides something new to discover.</p>
+  </section>
+
+  <section class="handoff">
+    <div class="handoff-box">
+      <div class="eyebrow">Looking for more?</div>
+      <h3>Explore all destinations.</h3>
+      <p>Continue on the Efkarpidis Tours website to discover more departures and travel experiences.</p>
+      <a class="btn" href="https://www.efkarpidistours.gr/" target="_blank" rel="noopener">Explore destinations</a>
     </div>
   </section>
 
-  <section class="includes">
-    <h2>What’s included</h2>
-    <ul>
-      <li>Return travel</li>
-      <li>3 nights accommodation</li>
-      <li>Selected guided experiences</li>
-      <li>Local transfers</li>
-      <li>Efkarpidis Tours coordination</li>
-    </ul>
-  </section>
-
-  <section class="cta">
-    <div class="cta-box">
-      <h3>Interested in Lisbon?</h3>
-      <p>Check the next available departure or ask us for more details about this curated escape.</p>
-      <a class="btn" href="mailto:info@efkarpidistours.gr">Ask about this journey</a>
-    </div>
-  </section>
-
-  <footer>Curated Escapes · Demo experience</footer>
+  <footer>
+    <strong>efkarpidis tours</strong>
+    <span>Discover more than the destination.</span>
+  </footer>
 </div>
+
+<div class="toast" id="toast">Lisbon added to your Travel Pass · Demo</div>
+<script>
+const btn=document.getElementById('passBtn');
+const toast=document.getElementById('toast');
+btn.addEventListener('click',()=>{
+  toast.classList.add('show');
+  btn.textContent='Added to Travel Pass';
+  setTimeout(()=>toast.classList.remove('show'),2200);
+});
+</script>
 </body>
 </html>
