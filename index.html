@@ -210,5 +210,21 @@ const observer=new IntersectionObserver(entries=>{
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
+
+<script>
+window.__efTrackPageView=true;
+fetch('/api/track',{
+  method:'POST',
+  headers:{'Content-Type':'application/json'},
+  keepalive:true,
+  body:JSON.stringify({
+    event:'page_view',
+    path:location.pathname,
+    referrer:document.referrer||'direct',
+    title:document.title,
+    ts:new Date().toISOString()
+  })
+}).catch(()=>{});
+</script>
 </body>
 </html>
