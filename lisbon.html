@@ -6,10 +6,10 @@
 <title>Lisbon — Curated Escapes</title>
 <meta name="theme-color" content="#F98050">
 <style>
-@font-face{font-family:"EO Brand";src:url("./brandtypeface.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"EO Display";src:url("./DisplayTypeface-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
-@font-face{font-family:"Vontica Sans";src:url("./VonticaSans-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Vontica Sans";src:url("./VonticaSans-SemiBold.woff2") format("woff2");font-weight:600 800;font-style:normal;font-display:swap}
+@font-face{font-family:"EO Brand";src:url("assets/brandtypeface.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"EO Display";src:url("assets/DisplayTypeface-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Vontica Sans";src:url("assets/VonticaSans-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Vontica Sans";src:url("assets/VonticaSans-SemiBold.woff2") format("woff2");font-weight:600 800;font-style:normal;font-display:swap}
 :root{
   --green:#05513C;
   --green-soft:#ACCA5B;
@@ -89,13 +89,9 @@ h1{font-family:"EO Display",Georgia,"Times New Roman",serif;font-size:62px;line-
 .travel-pass h2{font-family:"Vontica Sans",sans-serif;font-size:27px;font-weight:600;letter-spacing:-.03em;margin:7px 0 8px}
 .travel-pass p{margin:0 0 16px;line-height:1.5;color:rgba(255,255,255,.84);max-width:500px}
 .pass-btn{display:inline-flex;background:#fff;color:var(--green);padding:11px 14px;border-radius:999px;font-size:11px;font-weight:800;border:0;cursor:pointer}
-.pass-card-wrap{display:flex;justify-content:flex-end}
-.pass-card{width:104px;aspect-ratio:.64;border-radius:15px;background:linear-gradient(180deg,#f7c6d9 0%,#f8c950 100%);color:var(--brown);padding:12px 10px;box-shadow:0 14px 26px rgba(0,0,0,.18);transform:rotate(5deg);display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.35)}
-.pass-card-top{font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
-.pass-card-mark{width:34px;height:34px;border-radius:50%;border:1px solid rgba(74,37,7,.35);display:grid;place-items:center;font-family:Georgia,serif;font-size:18px;font-weight:700}
-.pass-card-main strong{display:block;font-size:15px;line-height:1;letter-spacing:-.03em}
-.pass-card-main span{display:block;font-size:7px;line-height:1.25;margin-top:5px;text-transform:uppercase;letter-spacing:.08em}
-.pass-card-bottom{font-size:7px;letter-spacing:.08em;text-transform:uppercase}
+.pass-card-wrap{display:flex;justify-content:flex-end;align-items:center}
+.pass-card{width:108px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.20));transform:rotate(5deg)}
+.pass-card img{display:block;width:100%;height:auto}
 .brand-moment{margin:30px 20px 0;border-radius:28px;background:var(--brown);color:#fff;padding:24px}
 .brand-moment .eyebrow{color:var(--yellow)}
 .brand-moment h2{font-family:"EO Brand","Vontica Sans",sans-serif;font-size:36px;font-weight:400;line-height:1;margin:8px 0 10px}
@@ -108,7 +104,7 @@ h1{font-family:"EO Display",Georgia,"Times New Roman",serif;font-size:62px;line-
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 15px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color:#6d7671;display:flex;justify-content:space-between;gap:12px}
-@media(max-width:560px){h1{font-size:54px}.travel-pass-inner{grid-template-columns:minmax(0,1fr) 96px;gap:12px}.pass-card{width:86px}}
+@media(max-width:560px){h1{font-size:54px}.travel-pass-inner{grid-template-columns:minmax(0,1fr) 104px;gap:14px}.pass-card{width:96px}}
 </style>
 </head>
 <body>
@@ -204,13 +200,7 @@ footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color
       </div>
       <div class="pass-card-wrap" aria-hidden="true">
         <div class="pass-card">
-          <div class="pass-card-top">Travel Pass</div>
-          <div class="pass-card-mark">e</div>
-          <div class="pass-card-main">
-            <strong>LISBON</strong>
-            <span>Curated Escape</span>
-          </div>
-          <div class="pass-card-bottom">Efkarpidis Tours</div>
+          <img src="assets/EF_TravelPass@2x.svg" alt="Efkarpidis Tours Travel Pass">
         </div>
       </div>
     </div>
