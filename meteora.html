@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meteora — Curated Escapes</title>
+<meta name="theme-color" content="#1D749E">
+<style>
+@font-face{font-family:"EO Brand";src:url("assets/brandtypeface.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"EO Display";src:url("assets/DisplayTypeface-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Vontica Sans";src:url("assets/VonticaSans-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Vontica Sans";src:url("assets/VonticaSans-SemiBold.woff2") format("woff2");font-weight:600 800;font-style:normal;font-display:swap}
+:root{
+  --green:#05513C;
+  --green-soft:#ACCA5B;
+  --brown:#4A2507;
+  --coral:#F98050;
+  --pink:#F7C6D9;
+  --yellow:#F8C950;
+  --cream:#F2EFE8;
+  --ink:#13231E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Vontica Sans",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;min-height:100vh;background:var(--cream)}
+.masthead{padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.back{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--green);font-weight:800}
+.brand{display:flex;align-items:center}
+.brand img{display:block;width:146px;height:auto}
+.hero{margin:0 16px;border-radius:0 0 30px 30px;min-height:365px;padding:42px 20px 28px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(rgba(74,37,7,.42),rgba(5,81,60,.48)),url("assets/meteora_trip_img.webp?v=386d7e6b") center 58%/cover no-repeat;color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-64px;top:-54px;width:200px;height:200px;border:1px solid rgba(255,255,255,.22);border-radius:50%}
+.hero>*{position:relative;z-index:2}.hero .kicker{position:absolute;top:26px;left:20px;right:20px;color:#A1D4EF}
+.gallery{margin:30px 20px 0}
+.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:12px}
+.gallery-head h2{font-size:24px;letter-spacing:-.03em;margin:6px 0 0}
+.gallery-counter{font-size:11px;color:#738078;letter-spacing:.08em}
+.gallery-frame{position:relative;overflow:hidden;border-radius:28px;aspect-ratio:4/5;background:#ddd;touch-action:pan-y}
+.gallery-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.gallery-slide{min-width:100%;height:100%;position:relative}
+.gallery-slide.one{background:url("assets/meteora_trip_img.webp?v=386d7e6b") center 42%/cover no-repeat}
+.gallery-slide.two{background:url("assets/meteora_trip_img.webp?v=386d7e6b") center 62%/cover no-repeat}
+.gallery-slide.three{background:url("assets/meteora_trip_img.webp?v=386d7e6b") center 78%/cover no-repeat}
+.gallery-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.35))}
+.gallery-caption{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff}
+.gallery-caption strong{display:block;font-size:18px;margin-bottom:2px}
+.gallery-caption span{font-size:12px;color:rgba(255,255,255,.84)}
+.gallery-dots{display:flex;justify-content:center;gap:7px;margin-top:12px}
+.gallery-dot{width:8px;height:8px;border-radius:50%;border:1px solid rgba(19,35,30,.36);background:transparent;padding:0}
+.gallery-dot.active{background:var(--green);border-color:var(--green)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.hero .kicker,.hero h1,.hero p,.hero .price{opacity:0;transform:translateY(14px);animation:heroIn .65s forwards}
+.hero h1{animation-delay:.08s}.hero p{animation-delay:.16s}.hero .price{animation-delay:.24s}
+@keyframes heroIn{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}.reveal,.hero .kicker,.hero h1,.hero p,.hero .price,.gallery-track{transition:none!important;animation:none!important;opacity:1!important;transform:none!important}}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}
+h1{font-family:"EO Display",Georgia,"Times New Roman",serif;font-size:62px;line-height:1.04;letter-spacing:-.055em;margin:10px 0 8px}
+.hero p{font-size:18px;line-height:1.45;margin:0 0 18px;max-width:520px}
+.price{display:inline-flex;align-items:baseline;gap:8px;background:#A1D4EF;color:var(--brown);padding:10px 14px;border-radius:999px;width:max-content;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.price small{font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.price strong{font-size:24px}
+.section{padding:30px 20px 6px}
+.eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#758079;font-weight:800}
+.section h2{font-family:"Vontica Sans",sans-serif;font-size:27px;font-weight:600;line-height:1.22;letter-spacing:-.02em;margin:8px 0 14px}
+.intro{font-size:16px;line-height:1.62;margin:0;color:#39463f}
+.atglance{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.fact{border-top:1px solid rgba(19,35,30,.16);padding-top:12px}
+.fact small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7a837e;margin-bottom:5px}
+.fact strong{font-size:16px}
+.editorial{margin:30px 20px 0;background:#fff;border-radius:28px;padding:22px;border:1px solid rgba(19,35,30,.06)}
+.editorial h2{font-family:"Vontica Sans",sans-serif;font-size:25px;font-weight:600;line-height:1.22;margin:8px 0 16px}
+.editorial-list{display:grid;gap:14px}
+.item{padding-bottom:14px;border-bottom:1px solid rgba(19,35,30,.08)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.item b{display:block;margin-bottom:4px}
+.item span{font-size:14px;line-height:1.45;color:#5b6660}
+.curious-point{margin:30px 20px 0;background:var(--yellow);color:var(--brown);border-radius:28px;padding:22px;position:relative;overflow:hidden}
+.curious-point:after{content:"";position:absolute;inset:0;background:url("assets/ef_pattern_03.svg") center/cover no-repeat;opacity:.22}.curious-point>*{position:relative;z-index:2}
+.curious-point .eyebrow{color:var(--brown)}
+.curious-point h2{font-family:"EO Brand","Vontica Sans",sans-serif;font-size:32px;font-weight:400;line-height:1.24;margin:8px 0 9px;max-width:470px}
+.curious-point p{margin:0;max-width:520px;line-height:1.5;color:rgba(74,37,7,.82)}
+.travel-pass{margin:64px 20px 0;background:var(--green);color:#fff;border-radius:28px;padding:30px 26px 26px;position:relative;overflow:visible}
+.travel-pass:after{display:none}
+.travel-pass-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.travel-pass .eyebrow{color:var(--yellow)}
+.travel-pass h2{font-family:"Vontica Sans",sans-serif;font-size:27px;font-weight:600;line-height:1.22;letter-spacing:-.02em;margin:8px 0 10px}
+.travel-pass p{margin:0 0 16px;line-height:1.5;color:rgba(255,255,255,.84);max-width:500px}
+.pass-btn{display:inline-flex;background:#fff;color:var(--green);padding:11px 14px;border-radius:999px;font-size:11px;font-weight:800;border:0;cursor:pointer}
+.pass-card-wrap{order:-1;width:100%;display:flex;justify-content:center;align-items:center;margin:-64px 0 14px;position:relative}
+.pass-card-wrap:before{content:"";position:absolute;width:154px;height:154px;border-radius:50%;background:var(--green-soft);opacity:.78;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1}.pass-card{width:min(188px,62%);filter:drop-shadow(0 14px 24px rgba(0,0,0,.18));transform:none;position:relative;z-index:2}.pass-pin{position:absolute;right:12px;bottom:-12px;width:76px;height:auto;z-index:4}.pass-path{position:absolute;left:-42px;top:34px;width:86px;height:auto;z-index:3;transform:rotate(-8deg)}.pass-world{position:absolute;right:62px;top:-26px;width:48px;height:auto;z-index:3;transform:rotate(8deg)}
+.pass-card img{display:block;width:100%;height:auto}
+.brand-moment{margin:30px 20px 0;border-radius:28px;background:var(--brown);color:#fff;padding:24px}
+.brand-moment .eyebrow{color:var(--yellow)}
+.brand-moment h2{font-family:"EO Brand","Vontica Sans",sans-serif;font-size:36px;font-weight:400;line-height:1.24;margin:8px 0 10px}
+.brand-moment p{margin:0;color:rgba(255,255,255,.82);line-height:1.5}
+.handoff{padding:30px 20px 42px}
+.handoff-box{border-top:1px solid rgba(19,35,30,.13);padding-top:24px}
+.handoff h3{font-size:27px;letter-spacing:-.03em;margin:8px 0}
+.handoff p{margin:0 0 16px;line-height:1.5;color:#4f5a54}
+.btn{display:inline-flex;background:var(--green);color:#fff;padding:12px 16px;border-radius:999px;font-size:11px;font-weight:800}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 15px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{padding:20px;border-top:1px solid rgba(19,35,30,.08);font-size:11px;color:#6d7671;display:flex;justify-content:space-between;gap:12px}
+@media(max-width:560px){h1{font-size:54px;line-height:1.06}.section h2,.editorial h2,.travel-pass h2{line-height:1.25}.curious-point h2,.brand-moment h2{line-height:1.24}.travel-pass{margin-top:62px;padding:28px 24px 24px}.pass-card-wrap{margin:-58px 0 12px}.pass-card{width:min(172px,58%)}}
+.display-title{font-family:"EO Display","Vontica Sans",sans-serif!important;font-weight:800;color:var(--blue,#1D749E)}
+.hero h1{color:#fff}
+@media(max-width:560px){.pass-pin{right:4px;bottom:-10px;width:72px}.pass-path{left:-36px;top:38px;width:78px}.pass-world{right:54px;top:-24px;width:44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <div class="brand"><img src="assets/ef-logo.svg" alt="Efkarpidis Tours"></div>
+    <a class="back" href="/" aria-label="Επιστροφή στα Curated Escapes">Back</a>
+  </div>
+
+  <section class="hero">
+    <div class="kicker" style="font-family:'EO Brand','Vontica Sans',sans-serif;font-size:14px;font-weight:400;letter-spacing:.02em;text-transform:none">Worth the detour · Greece</div>
+    <h1>Meteora</h1>
+    <p>Εκεί όπου η γη συναντά τον ουρανό.</p>
+    <div class="price"><small>από</small><strong>€89</strong></div>
+  </section>
+
+  <section class="section reveal">
+    <div class="eyebrow">Με μια ματιά</div>
+    <h2>Ένα τοπίο που αλλάζει τον τρόπο που κοιτάς ψηλά.</h2>
+    <p class="intro">Μια απόδραση ανάμεσα στους επιβλητικούς βράχους των Μετεώρων, τις ιστορικές μονές και τα σημεία θέας που κάνουν το τοπίο να μοιάζει σχεδόν εξωπραγματικό.</p>
+    <div class="atglance">
+      <div class="fact"><small>Διάρκεια</small><strong>1 ημέρα</strong></div>
+      <div class="fact"><small>Επόμενη αναχώρηση</small><strong>Ημερομηνίες σύντομα</strong></div>
+      <div class="fact"><small>Τύπος ταξιδιού</small><strong>Nature + Culture</strong></div>
+      <div class="fact"><small>Διαθεσιμότητα</small><strong>Περιορισμένες θέσεις</strong></div>
+    </div>
+  </section>
+
+  <section class="gallery reveal reveal-delay-1">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow">Μια ματιά στα Μετέωρα</div>
+        <h2>Δες λίγο περισσότερα</h2>
+      </div>
+      <div class="gallery-counter" id="galleryCounter">1 / 3</div>
+    </div>
+    <div class="gallery-frame" id="galleryFrame">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide three clone" aria-hidden="true">
+          <div class="gallery-caption"><strong>Rock formations</strong><span>Ένα τοπίο που δύσκολα μοιάζει με οτιδήποτε άλλο</span></div>
+        </div>
+        <div class="gallery-slide one">
+          <div class="gallery-caption"><strong>Monasteries</strong><span>Ιστορία και αρχιτεκτονική πάνω στους βράχους</span></div>
+        </div>
+        <div class="gallery-slide two">
+          <div class="gallery-caption"><strong>Viewpoints</strong><span>Σημεία όπου το τοπίο ανοίγεται μπροστά σου</span></div>
+        </div>
+        <div class="gallery-slide three">
+          <div class="gallery-caption"><strong>Rock formations</strong><span>Ένα τοπίο που δύσκολα μοιάζει με οτιδήποτε άλλο</span></div>
+        </div>
+        <div class="gallery-slide one clone" aria-hidden="true">
+          <div class="gallery-caption"><strong>Monasteries</strong><span>Ιστορία και αρχιτεκτονική πάνω στους βράχους</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-dots">
+      <button class="gallery-dot active" data-gallery="0" aria-label="Εικόνα 1"></button>
+      <button class="gallery-dot" data-gallery="1" aria-label="Εικόνα 2"></button>
+      <button class="gallery-dot" data-gallery="2" aria-label="Εικόνα 3"></button>
+    </div>
+  </section>
+
+  <section class="editorial reveal reveal-delay-2">
+    <div class="eyebrow">What you'll discover</div>
+    <h2 class="display-title">Meteora, above the ordinary</h2>
+    <div class="editorial-list">
+      <div class="item"><b>Οι μονές των Μετεώρων</b><span>Μνημεία ιστορίας, πίστης και αρχιτεκτονικής σε ένα από τα πιο ιδιαίτερα τοπία της Ελλάδας.</span></div>
+      <div class="item"><b>Το γεωλογικό τοπίο</b><span>Οι χαρακτηριστικοί βραχώδεις σχηματισμοί που δημιουργούν τη μοναδική ταυτότητα της περιοχής.</span></div>
+      <div class="item"><b>Σημεία θέας</b><span>Επιλεγμένες στάσεις για να δεις το τοπίο από διαφορετικές οπτικές.</span></div>
+      <div class="item"><b>Χρόνος για εξερεύνηση</b><span>Χρόνος για να παρατηρήσεις τις λεπτομέρειες και να απολαύσεις τον ιδιαίτερο ρυθμό του τόπου.</span></div>
+    </div>
+  </section>
+
+  <section class="curious-point reveal">
+    <div class="eyebrow">Curious Point</div>
+    <h2>Κοίτα ψηλά και ανακάλυψε πώς ένα απίθανο τοπίο έγινε τόπος ζωής και ιστορίας</h2>
+    <p>Οι μονές χτίστηκαν πάνω στους απότομους βράχους των Μετεώρων, δημιουργώντας μια μοναδική σχέση ανάμεσα στο φυσικό τοπίο, την ανθρώπινη επιμονή και την πνευματική ζωή.</p>
+  </section>
+
+  <section class="section reveal">
+    <div class="eyebrow">Λεπτομέρειες ταξιδιού</div>
+    <h2>Τι περιλαμβάνεται</h2>
+    <p class="intro">Μεταφορά με επιστροφή, οργανωμένη επίσκεψη στην περιοχή, επιλεγμένες στάσεις και συντονισμός από το Efkarpidis Tours.</p>
+  </section>
+
+  <section class="travel-pass reveal">
+    <div class="travel-pass-inner">
+      <div>
+        <div class="eyebrow">Travel Pass</div>
+        <h2>Κράτησε αυτό το<br>ταξίδι μαζί σου</h2>
+        <p>Αποθήκευσε το ταξίδι, χρήσιμες πληροφορίες και μελλοντικές ενημερώσεις σε ένα σημείο.</p>
+        <button class="pass-btn" id="passBtn">Add to Travel Pass</button>
+      </div>
+      <div class="pass-card-wrap" aria-hidden="true">
+        <img class="pass-path" src="assets/ef_icon_path.svg" alt="">
+        <img class="pass-world" src="assets/ef_icon_world.svg" alt="">
+        <img class="pass-pin" src="assets/ef_icon_pin.svg" alt="">
+        <div class="pass-card">
+          <img src="assets/ef_travelpass.webp?v=d1be6f95" alt="Efkarpidis Tours Travel Pass">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>efkarpidis tours</strong>
+    <span>Discover more than the destination.</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast">Τα Meteora προστέθηκαν στο Travel Pass · Demo</div>
+<script>
+const track=document.getElementById('galleryTrack');
+const frame=document.getElementById('galleryFrame');
+const galleryDots=[...document.querySelectorAll('.gallery-dot')];
+const counter=document.getElementById('galleryCounter');
+const totalGallery=galleryDots.length;
+let logicalGallery=0;
+let physicalGallery=1;
+let galleryAnimating=false;
+function updateGalleryMeta(){
+  galleryDots.forEach((d,j)=>d.classList.toggle('active',logicalGallery===j));
+  counter.textContent=(logicalGallery+1)+' / '+totalGallery;
+}
+function setGalleryPosition(withAnimation=true){
+  track.style.transition=withAnimation?'transform .45s cubic-bezier(.22,.61,.36,1)':'none';
+  track.style.transform='translateX(-'+(physicalGallery*100)+'%)';
+}
+function moveGallery(direction){
+  if(galleryAnimating) return;
+  galleryAnimating=true;
+  physicalGallery+=direction;
+  logicalGallery=(logicalGallery+direction+totalGallery)%totalGallery;
+  updateGalleryMeta();
+  setGalleryPosition(true);
+}
+function goToGallery(index){
+  if(galleryAnimating || index===logicalGallery) return;
+  const diff=index-logicalGallery;
+  if(Math.abs(diff)===1){
+    moveGallery(diff);
+  }else{
+    logicalGallery=index;
+    physicalGallery=index+1;
+    updateGalleryMeta();
+    setGalleryPosition(true);
+    galleryAnimating=true;
+  }
+}
+setGalleryPosition(false);
+updateGalleryMeta();
+track.addEventListener('transitionend',()=>{
+  if(physicalGallery===0){
+    physicalGallery=totalGallery;
+    setGalleryPosition(false);
+  }else if(physicalGallery===totalGallery+1){
+    physicalGallery=1;
+    setGalleryPosition(false);
+  }
+  galleryAnimating=false;
+});
+galleryDots.forEach((dot,i)=>dot.addEventListener('click',()=>goToGallery(i)));
+let touchStartX=0;
+frame.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+frame.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(dx)>35) moveGallery(dx<0?1:-1);
+},{passive:true});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+  });
+},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const btn=document.getElementById('passBtn');
+const toast=document.getElementById('toast');
+btn.addEventListener('click',()=>{
+  toast.classList.add('show');
+  btn.textContent='Added to Travel Pass';
+  setTimeout(()=>toast.classList.remove('show'),2200);
+});
+</script>
+</body>
+</html>
